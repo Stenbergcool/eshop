@@ -2,6 +2,7 @@ let productsHandler = {
     fetchProducts: async function fetchProducts() {
         let response = await fetch('https://fakestoreapi.com/products')
         let data = await response.json()
+        console.log("fetch done")
         return data
     },
     fetchCategories: async function fetchCategories() {
