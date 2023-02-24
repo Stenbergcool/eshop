@@ -1,5 +1,4 @@
 function ProductCard(item) {
-    console.log(item)
     return (
         <div className="flex justify-center h-64 w-56 drop-shadow-l">
             <div

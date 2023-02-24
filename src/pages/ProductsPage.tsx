@@ -7,6 +7,7 @@ function ProductsPage() {
     const [products, setProducts] = useState<{ id: number, title: string, description: string, price: number, category: string, rating: {rate: number, count:number} }[]>([]);
     const [categories, setCategories] = useState([]);
     const [productsGroups, setProductsGroups] = useState(<></>);
+    const [category, setCategory] = useState<String>("")
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,19 +25,26 @@ function ProductsPage() {
         console.log(categories)
     }, [categories])
 
+    useEffect(() => {
+        console.log(category)
+        let filteredProducts = products.filter(e => {
+            return e.category == category
+        })
+        productMaker(filteredProducts)
+    }, [category])
+
     function productMaker(products: any){
         if (products[1]) {
-            console.log("sd")
-        let productsGroup = products.map(e => {
+            let productsGroup = products.map(e => {
             return (<ProductCard key={e.id} title={e.title} description={e.description} />)
-        })
-        setProductsGroups(productsGroup)
+            })
+            setProductsGroups(productsGroup)
         }
     }
 
     return (
         <>
-        <Underbar categories={categories}/>
+        <Underbar categories={categories} setCategory={setCategory}/>
     <div className="grid grid-rows-4 grid-flow-col gap-2">
         {productsGroups}
     </div>

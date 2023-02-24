@@ -7,10 +7,9 @@ import ProductsPage from './pages/ProductsPage'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App bg-slate-100">
+    <div className="App bg-slate-100 max-w-7xl">
       <Navbar/>
       <Routes>
             <Route path="/" element={<Home/>}></Route>
