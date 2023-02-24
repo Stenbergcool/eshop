@@ -10,8 +10,8 @@ import './App.css'
 
 function App() {
   const [products, setProducts] = useState<{ id: number, title: string, description: string, price: number, category: string, rating: {rate: number, count:number} }[]>([]);
-  const [cart, setCart] = useState([]);
-  const articleId = useRef(null)
+  const cart = useRef([])
+  const articleId = useRef(1)
 
   useEffect(() => {
         const fetchData = async () => {
@@ -21,12 +21,12 @@ function App() {
     }, [])
 
   return (
-    <div className="App bg-white max-w-7xl">
+    <div className="App bg-white">
       <Navbar/>
       <Routes>
-            <Route path="/" element={<Home/>}></Route>
+            <Route path="/" element={<Home products={products}/>}></Route>
             <Route path="/ProductsPage" element={<ProductsPage products={products} articleId={articleId}/>}></Route>
-            <Route path="/SingleProductPage" element={<SingleProductPage products={products} articleId={articleId}/>}></Route>
+            <Route path="/SingleProductPage" element={<SingleProductPage products={products} articleId={articleId} cart={cart}/>}></Route>
       </Routes>
     </div>
   )

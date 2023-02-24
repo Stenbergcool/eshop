@@ -35,7 +35,7 @@ function ProductsPage(props) {
         }
     }, [category])
 
-    function productMaker(products: any){
+    function productMaker(products: Array<any>){
         if (products[1]) {
             let productsGroup = products.map(e => {
             return (<ProductCard key={e.id} title={e.title} description={e.description} price={e.price} image={e.image} id={e.id} articleId={props.articleId}/>)
