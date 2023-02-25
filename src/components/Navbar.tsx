@@ -2,7 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom'
 
 function Navbar() {
     return (
-        <nav className="bg-white max-w-7xl border-gray-200 px-2 sm:px-4 py-2.5 z-40">
+        <nav className="bg-white max-w-7xl border-gray-200 px-2 sm:px-4 py-2.5 z-40 border-b-2 border-neutral-800">
         <div className="container items-center justify-between mx-auto">
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="flex p-4 mt-4 border border-gray-100 rounded-lg b md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
