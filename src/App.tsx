@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import SingleProductPage from './pages/SingleProductPage';
 import ProductsPage from './pages/ProductsPage'
+import Cart from './pages/Cart';
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Home products={products}/>}></Route>
             <Route path="/ProductsPage" element={<ProductsPage products={products} articleId={articleId}/>}></Route>
             <Route path="/SingleProductPage" element={<SingleProductPage products={products} articleId={articleId} cart={cart}/>}></Route>
+            <Route path="/Cart" element={<Cart cart={cart}/>}></Route>
       </Routes>
     </div>
   )
